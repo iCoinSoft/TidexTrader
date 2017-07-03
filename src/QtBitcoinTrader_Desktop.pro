@@ -13,8 +13,8 @@ CONFIG -= app_bundle
 
 CONFIG	+= qt release c++11
 
- win32 { TARGET = ../Bin/QtBitcoinTrader }
-!win32 { TARGET = QtBitcoinTrader }
+ win32 { TARGET = ../Bin/TidexTrader }
+!win32 { TARGET = TidexTrader }
 
 QT += network script widgets
 !win32 { QT += multimedia }
