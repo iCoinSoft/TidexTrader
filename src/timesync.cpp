@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -131,7 +131,7 @@ void TimeSync::getNTPTime()
 
     if(tempTimeShift>3600 || tempTimeShift<-3600){
         static bool showMessage=true;
-        if(showMessage)emit warningMessage(julyTr("TIME_SYNC_ERROR","Your clock is not set. Please close the Qt Bitcoin Trader and set the clock. Changing time at Qt Bitcoin Trader enabled can cause errors and damage the keys."));
+        if(showMessage)emit warningMessage(julyTr("TIME_SYNC_ERROR","Your clock is not set. Please close the TidexTrader and set the clock. Changing time at TidexTrader enabled can cause errors and damage the keys."));
         showMessage=false;
     }
     else

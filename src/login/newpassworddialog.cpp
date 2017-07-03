@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -345,5 +345,5 @@ void NewPasswordDialog::okPressed()
 
 	if(diff_t)accept();
 	else
-		QMessageBox::warning(this,"Qt Bitcoin Trader",julyTranslator.translateLabel("TR00100","Your password must be at least 8 characters and contain letters, digits, and special characters."));
+        QMessageBox::warning(this,"TidexTrader",julyTranslator.translateLabel("TR00100","Your password must be at least 8 characters and contain letters, digits, and special characters."));
 }

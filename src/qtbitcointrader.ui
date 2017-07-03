@@ -20,7 +20,7 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>Qt Bitcoin Trader</string>
+   <string>TidexTrader</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -5971,7 +5971,7 @@
      <x>0</x>
      <y>0</y>
      <width>1550</width>
-     <height>18</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

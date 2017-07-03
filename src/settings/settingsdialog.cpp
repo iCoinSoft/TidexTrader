@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //

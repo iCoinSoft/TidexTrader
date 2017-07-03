@@ -5,7 +5,7 @@
 	<key>CFBundleVersion</key>
         <string>1.30.00</string>
 	<key>CFBundleName</key>
-	<string>Qt Bitcoin Trader</string>
+        <string>TidexTrader</string>
 	<key>CFBundleIconFile</key>
 	<string>QtBitcoinTrader</string>
 	<key>CFBundlePackageType</key>

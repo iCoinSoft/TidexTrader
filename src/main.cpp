@@ -270,19 +270,7 @@ int main(int argc, char *argv[])
     baseValues.appThemeGray.loadTheme("Gray");
     baseValues.appTheme=baseValues.appThemeLight;
 
-    if(argc>1){if(a.arguments().last().startsWith("/checkupdate"))
-        {
-			a.setStyleSheet(baseValues.appTheme.styleSheet);
 
-			QSettings settings(appDataDir+"/QtBitcoinTrader.cfg",QSettings::IniFormat);
-			QString langFile=settings.value("LanguageFile","").toString();
-            if(langFile.isEmpty()||(!langFile.isEmpty()&&!QFile::exists(langFile)))langFile=baseValues.defaultLangFile;
-			julyTranslator.loadFromFile(langFile);
-			QTimer::singleShot(3600000,&a,SLOT(quit()));
-			UpdaterDialog updater(a.arguments().last()!="/checkupdate");
-			return a.exec();
-		}
-	}
 
 #ifdef  Q_OS_WIN
 	if(QFile::exists(a.applicationFilePath()+".upd"))QFile::remove(a.applicationFilePath()+".upd");
@@ -446,7 +434,7 @@ int main(int argc, char *argv[])
 			settings.setValue("Profile/ExchangeId",newPassword.getExchangeId());
             settings.sync();
 			if(!QFile::exists(baseValues.iniFileName))
-				QMessageBox::warning(0,"Qt Bitcoin Trader","Can't write file: \""+baseValues.iniFileName+"\"");
+                QMessageBox::warning(0,"TidexTrader","Can't write file: \""+baseValues.iniFileName+"\"");
 			QByteArray encryptedData;
 			switch(newPassword.getExchangeId())
 			{
@@ -554,7 +542,7 @@ int main(int argc, char *argv[])
             {
 				QMessageBox msgBox(0);
 				msgBox.setIcon(QMessageBox::Question);
-				msgBox.setWindowTitle("Qt Bitcoin Trader");
+                msgBox.setWindowTitle("TidexTrader");
                 msgBox.setText(julyTr("THIS_PROFILE_ALREADY_USED","This profile is already used by another instance.<br>API does not allow to run two instances with same key sign pair.<br>Please create new profile if you want to use two instances."));
 				msgBox.setStandardButtons(QMessageBox::Ok);
 				msgBox.setDefaultButton(QMessageBox::Ok);

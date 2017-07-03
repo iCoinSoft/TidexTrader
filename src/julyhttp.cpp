@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -76,7 +76,7 @@ JulyHttp::JulyHttp(const QString &hostN, const QByteArray &restLine, QObject *pa
 	if(baseValues.customUserAgent.length()>0)
     httpHeader.append("User-Agent: "+baseValues.customUserAgent+"\r\n");
 		else
-    httpHeader.append("User-Agent: Qt Bitcoin Trader v"+baseValues.appVerStr+"\r\n");
+    httpHeader.append("User-Agent: TidexTrader v"+baseValues.appVerStr+"\r\n");
 	httpHeader.append("Host: "+hostName+"\r\n");
     httpHeader.append("Accept: */*\r\n");
 	if(baseValues.gzipEnabled)httpHeader.append("Accept-Encoding: gzip\r\n");

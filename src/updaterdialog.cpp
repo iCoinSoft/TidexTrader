@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -225,9 +225,9 @@ void UpdaterDialog::dataReceived(QByteArray dataReceived,int reqType)
 			{
 				QMessageBox msgb;
 				msgb.setWindowFlags(Qt::WindowCloseButtonHint|Qt::WindowStaysOnTopHint);
-				msgb.setWindowTitle("Qt Bitcoin Trader");
+                msgb.setWindowTitle("TidexTrader");
 				msgb.setIcon(QMessageBox::Information);
-				msgb.setText(julyTr("UP_TO_DATE","Your version of Qt Bitcoin Trader is up to date."));
+                msgb.setText(julyTr("UP_TO_DATE","Your version of TidexTrader is up to date."));
 				msgb.exec();
 			}
 			exitSlot();

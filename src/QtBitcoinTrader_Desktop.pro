@@ -1,5 +1,5 @@
 lessThan(QT_VERSION, 5.5): {
-error("Qt less than 5.5 is no longer supported. In order to compile Qt Bitcoin Trader you need update to Qt 5.5 and C++11");
+error("Qt less than 5.5 is no longer supported. In order to compile TidexTrader you need update to Qt 5.5 and C++11");
 }
 
 TEMPLATE	= app

@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -2462,7 +2462,7 @@ bool QtBitcoinTrader::executeConfirmExitDialog()
 {
     QMessageBox msgBox(windowWidget);
     msgBox.setIcon(QMessageBox::Question);
-    msgBox.setWindowTitle("Qt Bitcoin Trader");
+    msgBox.setWindowTitle("TidexTrader");
     msgBox.setText(julyTr("CONFIRM_EXIT","Are you sure to close Application?<br>Active rules works only while application is running."));
     msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     msgBox.setDefaultButton(QMessageBox::Yes);
@@ -2876,7 +2876,7 @@ void QtBitcoinTrader::languageChanged()
     actionConfigManager->setText(julyTr("CONFIG_MANAGER", "&Save..."));
     actionSettings->setText(julyTr("CONFIG_SETTINGS", "Se&ttings"));
     actionDebug->setText(julyTr("CONFIG_DEBUG", "&Debug"));
-    menuFile->setTitle("&QtBitcoinTrader");
+    menuFile->setTitle("&TidexTrader");
     menuView->setTitle(julyTr("MENU_VIEW", "&View"));
     menuConfig->setTitle(julyTr("MENU_CONFIG", "&Interface"));
     menuHelp->setTitle(julyTr("MENU_HELP", "&Help"));

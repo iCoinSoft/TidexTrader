@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -47,7 +47,7 @@ FeaturedExchangesDialog::FeaturedExchangesDialog() :
     ui->setupUi(this);
     ui->okButton->setEnabled(false);
 	setWindowFlags(Qt::WindowCloseButtonHint);
-    setWindowTitle("Qt Bitcoin Trader v"+baseValues.appVerStr+" - "+julyTr("FEATURED_EXCHANGES","Featured Exchanges"));
+    setWindowTitle("TidexTrader v"+baseValues.appVerStr+" - "+julyTr("FEATURED_EXCHANGES","Featured Exchanges"));
 
 	QSettings listSettings(":/Resources/Exchanges/List.ini",QSettings::IniFormat);
 	allExchangesList=listSettings.childGroups();

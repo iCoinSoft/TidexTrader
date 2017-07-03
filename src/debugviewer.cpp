@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -80,7 +80,7 @@ void DebugViewer::on_buttonSaveAs_clicked()
 	QFile writeLog(fileName);
 	if(writeLog.open(QIODevice::WriteOnly))
 	{
-		writeLog.write("Qt Bitcoin Trader "+baseValues.appVerStr+"\r\n");
+        writeLog.write("TidexTrader "+baseValues.appVerStr+"\r\n");
 
 		QByteArray osLine;
 #ifdef Q_OS_WIN

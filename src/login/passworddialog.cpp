@@ -1,4 +1,4 @@
-//  This file is part of Qt Bitcoin Trader
+//  This file is part of TidexTrader
 //      https://github.com/JulyIGHOR/QtBitcoinTrader
 //  Copyright (C) 2013-2017 July IGHOR <julyighor@gmail.com>
 //
@@ -109,7 +109,7 @@ PasswordDialog::PasswordDialog(QWidget *parent)
 				if(!haveBitstampProfile)
 				{
 					haveBitstampProfile=true;
-					QMessageBox::warning(0,windowTitle(),"From now Bitstamp support API keys with permissions. To ensure the security of your Bitstamp account you must create new API keys and add a new profile of Bitstamp to the Qt Bitcoin Trader.");
+                    QMessageBox::warning(0,windowTitle(),"From now Bitstamp support API keys with permissions. To ensure the security of your Bitstamp account you must create new API keys and add a new profile of Bitstamp to the TidexTrader.");
 				}
 				continue;
 			}
@@ -140,7 +140,7 @@ PasswordDialog::PasswordDialog(QWidget *parent)
 	if(firstUnlockedProfileIndex!=-1&&lastProfileIndex==-1)lastProfileIndex=firstUnlockedProfileIndex;
     if(lastProfileIndex>-1)ui.profileComboBox->setCurrentIndex(lastProfileIndex);
 
-    ui.label_info->setText("Centrabit AG, Zug\nreg. CHE-114.254.375\nVersion: "+baseValues.appVerStr);
+    ui.label_info->setText("Version: "+baseValues.appVerStr);
 
 	julyTranslator.translateUi(this);
 
