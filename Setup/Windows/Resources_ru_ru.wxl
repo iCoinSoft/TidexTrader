@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="ru-ru" Codepage="1251" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="downgradeErrorMsg">На компьютере уже установлена более новая версия [ProductName].</String>
+  <String Id="msiStrAppName">Сервер печати Axelot</String>
+  <String Id="msierrNetFrameworkNotInstalled">Установка не выполнена. Необходимо установить платформу .Net Framework 4.5</String>
+  <String Id="msierrOSNotSupported">Для работы приложения требуется Windows Server 2003 и старше.</String>
+  <String Id="msierrSecureObjectsFailedCreateSD">msierrSecureObjectsFailedCreateSD</String>
+  <String Id="msierrSecureObjectsFailedSet">msierrSecureObjectsFailedSet</String>
+  <String Id="msierrSecureObjectsUnknownType">msierrSecureObjectsUnknownType</String>
+
+  <String Id="msierrXmlFileFailedOpen">msierrXmlfileFailedOpen</String>
+  <String Id="msierrXmlFileFailedRead">msierrXmlFileLailedRead</String>
+  <String Id="msierrXmlFileFailedSave">msierrXmlFileFailedSave</String>
+  <String Id="msierrXmlFileFailedSelect">msierrXmlFileFailedSelect</String>
+</WixLocalization>

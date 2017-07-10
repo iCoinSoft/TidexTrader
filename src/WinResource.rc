@@ -8,14 +8,14 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "Centrabit"
-            VALUE "FileDescription", "Qt Bitcoin Trader"
+            VALUE "CompanyName", "Tidex"
+            VALUE "FileDescription", "TidexTrader"
             VALUE "FileVersion", "1.30.04"
-            VALUE "InternalName", "Qt Bitcoin Trader"
-            VALUE "LegalCopyright", "Copyright (C) 2017 Centrabit"
-            VALUE "OriginalFilename", "QtBitcoinTrader.exe"
-            VALUE "ProductName", "Qt Bitcoin Trader Application"
-            VALUE "ProductVersion", "1.30.04"
+            VALUE "InternalName", "TidexTrader"
+            VALUE "LegalCopyright", "Copyright (C) 2017 Tidex"
+            VALUE "OriginalFilename", "TidexTrader.exe"
+            VALUE "ProductName", "Tidex Trader Application"
+            VALUE "ProductVersion", "1.0.0"
         END
     END
 	BLOCK "VarFileInfo"

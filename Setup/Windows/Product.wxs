@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+	 
+  <Product
+    Id="a478267f-1caf-44ae-8e13-735723b7b22d"
+    Name="TidexTrader"
+    Language="1049"
+    Codepage="1251"
+    Version="1.0.1"
+    Manufacturer="Tidex"
+    UpgradeCode="fafdad34-da7d-479a-8009-e8b9e1e29f75">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine"/>
+
+   
+
+    <Media Id="1"
+           Cabinet="product.cab"
+           EmbedCab="yes" />
+		   
+	
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="COMPANYFOLDER" Name="Tidex">
+          <Directory Id="INSTALLFOLDER" Name="TidexTrader"/>
+        </Directory>
+      </Directory>
+	  <Directory Id="DesktopFolder" Name="Desktop"/>
+    </Directory>
+
+
+    <WixVariable Id="WixUIBannerBmp" Value="Tidex_header.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="Tidex_logo.png" />
+
+    
+ 
+    <Condition Message="OS not supported!">
+      <![CDATA[Installed OR (VersionNT >= 502)]]>
+    </Condition>
+
+    
+
+    <Feature Id="ProductFeature" Title="TidexTrader" Level="1">
+      <Component Id="InstallFolderManager"
+                 Guid="1879F636-22B5-42EA-B8D7-77891B6418D0"
+                 Directory="INSTALLFOLDER">
+        <CreateFolder>
+          
+        </CreateFolder>
+        <RemoveFolder Id="InstallFolderManager" On="uninstall"/>
+		
+      </Component>
+	        
+	  <ComponentGroupRef Id="Deployfiles"/>
+	  <ComponentRef Id="ApplicationShortcutDesktop" />
+      
+    </Feature>
+	
+    
+    
+    <InstallExecuteSequence>
+      
+    </InstallExecuteSequence>
+    <UI>
+      <UIRef Id="UI"/>
+    </UI>
+  </Product>
+  
+  <Fragment>
+		<DirectoryRef Id="DesktopFolder">
+		 <Component Id="ApplicationShortcutDesktop" Guid="*">
+		   <Shortcut Id="ApplicationDesktopShortcut" Name="TidexTrader" Description="TidexTrader" Target="[INSTALLFOLDER]TidexTrader.exe" WorkingDirectory="INSTALLFOLDER" />
+		   <RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+		   <RegistryValue Root="HKCU" Key="Software\TidexTrader" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+		 </Component>
+	   </DirectoryRef>
+	  </Fragment>
+</Wix>

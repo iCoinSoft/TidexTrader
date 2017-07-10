@@ -38,3 +38,6 @@ Makefile*
 CMakeLists.txt.user*
 
 QtBitcoinTrader/
+Setup/Windows/obj/
+Setup/Windows/bin/
+deploy/
