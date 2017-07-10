@@ -107,10 +107,6 @@ HEADERS += script/addrulegroup.h \
            depthitem.h \
            depthmodel.h \
            exchange/exchange.h \
-           exchange/exchange_bitfinex.h \
-           exchange/exchange_bitstamp.h \
-           exchange/exchange_btcchina.h \
-           exchange/exchange_btce.h \
            feecalculator.h \
            historyitem.h \
            historymodel.h \
@@ -142,19 +138,15 @@ HEADERS += script/addrulegroup.h \
            networkmenu.h \
            julybuttonmenu.h \
            julylockfile.h \
-           exchange/exchange_gocio.h \
            login/featuredexchangesdialog.h \
            login/allexchangesdialog.h \
            login/allexchangesmodel.h \
            login/exchangebutton.h \
-           exchange/exchange_indacoin.h \
            julymath.h \
-           exchange/exchange_bitcurex.h \
-           exchange/exchange_bitmarket.h \
-           exchange/exchange_okcoin.h \
            timesync.h \
            translationmessage.h \
-           indicatorengine.h
+           indicatorengine.h \
+    exchange/exchange_tidex.h
 
 FORMS += script/addrulegroup.ui \
          script/rulewidget.ui \
@@ -219,10 +211,7 @@ SOURCES += script/addrulegroup.cpp \
            depthitem.cpp \
            depthmodel.cpp \
            exchange/exchange.cpp \
-           exchange/exchange_bitfinex.cpp \
-           exchange/exchange_bitstamp.cpp \
-           exchange/exchange_btcchina.cpp \
-           exchange/exchange_btce.cpp \
+           exchange/exchange_tidex.cpp \
            feecalculator.cpp \
            historyitem.cpp \
            historymodel.cpp \
@@ -254,15 +243,10 @@ SOURCES += script/addrulegroup.cpp \
            networkmenu.cpp \
            julybuttonmenu.cpp \
            julylockfile.cpp \
-           exchange/exchange_gocio.cpp \
            login/featuredexchangesdialog.cpp \
            login/allexchangesdialog.cpp \
            login/allexchangesmodel.cpp \
            login/exchangebutton.cpp \
-           exchange/exchange_indacoin.cpp \
-           exchange/exchange_bitcurex.cpp \
-           exchange/exchange_bitmarket.cpp \
-           exchange/exchange_okcoin.cpp \
            timesync.cpp \
            translationmessage.cpp \
            indicatorengine.cpp

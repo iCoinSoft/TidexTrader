@@ -53,15 +53,7 @@
 #include "exchange/exchange.h"
 #include "script/addscriptwindow.h"
 #include "aboutdialog.h"
-#include "exchange/exchange_btce.h"
-#include "exchange/exchange_bitstamp.h"
-#include "exchange/exchange_btcchina.h"
-#include "exchange/exchange_bitfinex.h"
-#include "exchange/exchange_gocio.h"
-#include "exchange/exchange_indacoin.h"
-#include "exchange/exchange_bitcurex.h"
-#include "exchange/exchange_bitmarket.h"
-#include "exchange/exchange_okcoin.h"
+#include "exchange/exchange_tidex.h"
 #include <QSystemTrayIcon>
 #include <QtCore/qmath.h>
 #include "script/addrulegroup.h"
@@ -573,14 +565,6 @@ void QtBitcoinTrader::setupClass()
 	{
     case 0: QCoreApplication::quit(); return; break;//Secret Excange
 	case 1: currentExchange=new Exchange_BTCe(baseValues.restSign,baseValues.restKey);break;//BTC-E
-    case 2: currentExchange=new Exchange_Bitstamp(baseValues.restSign,baseValues.restKey);break;//Bitstamp
-    case 3: currentExchange=new Exchange_BTCChina(baseValues.restSign,baseValues.restKey);break;//BTC China
-    case 4: currentExchange=new Exchange_Bitfinex(baseValues.restSign,baseValues.restKey);break;//Bitfinex
-    case 5: currentExchange=new Exchange_GOCio(baseValues.restSign,baseValues.restKey);break;//GOCio
-    case 6: currentExchange=new Exchange_Indacoin(baseValues.restSign,baseValues.restKey);break;//Indacoin
-    case 7: currentExchange=new Exchange_BitCurex(baseValues.restSign,baseValues.restKey);break;//BitCurex
-    case 8: currentExchange=new Exchange_BitMarket(baseValues.restSign,baseValues.restKey);break;//BitMarket
-    case 9: currentExchange=new Exchange_OKCoin(baseValues.restSign,baseValues.restKey);break;//OKCoin
 	default: return;
 	}
 	baseValues.restSign.clear();
