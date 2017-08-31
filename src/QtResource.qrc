@@ -45,15 +45,6 @@
         <file>Resources/equal.png</file>
         <file>Resources/calc.png</file>
         <file>Resources/Currencies.ini</file>
-        <file>Resources/Exchanges/List.ini</file>
-        <file>Resources/Exchanges/BTCe.ini</file>
-        <file>Resources/Exchanges/Bitfinex.ini</file>
-        <file>Resources/Exchanges/Indacoin.ini</file>
-        <file>Resources/Exchanges/BTCChina.ini</file>
-        <file>Resources/Exchanges/Bitstamp.ini</file>
-        <file>Resources/Exchanges/GOCio.ini</file>
-        <file>Resources/Exchanges/BitCurex.ini</file>
-        <file>Resources/Exchanges/BitMarket.ini</file>
         <file>Resources/CurrencySign/AUD.png</file>
         <file>Resources/CurrencySign/BTC.png</file>
         <file>Resources/CurrencySign/LTC.png</file>
@@ -108,7 +99,6 @@
         <file>Resources/settings_decimals_32x32.png</file>
         <file>Resources/Exchanges/Logos/OKCoin.png</file>
         <file>Resources/Exchanges/Logos/OKCoin_Big.png</file>
-        <file>Resources/Exchanges/OKCoin.ini</file>
         <file>Resources/Language/Japanese.lng</file>
         <file>Resources/CurrencySign/DSH.png</file>
         <file>Resources/CurrencySign/ETH.png</file>
@@ -118,5 +108,10 @@
         <file>Resources/CurrencySign/ZEC.png</file>
         <file>Resources/CurrencySign/XMR.png</file>
         <file>Resources/CurrencySign/RRT.png</file>
+        <file>Resources/Exchanges/WAVES.ini</file>
+        <file>Resources/Exchanges/WEUR.ini</file>
+        <file>Resources/Exchanges/WUSD.ini</file>
+        <file>Resources/Exchanges/List.ini</file>
+        <file>Resources/Exchanges/Tidex.ini</file>
     </qresource>
 </RCC>

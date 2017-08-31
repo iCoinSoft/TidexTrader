@@ -391,8 +391,13 @@ private slots:
     void on_helpButton_clicked();
     void depthVisibilityChanged(bool);
     void chartsVisibilityChanged(bool);
+    void BtcMarketSelectionChanged(const QModelIndex& index);
+    void WavesMarketSelectionChanged(const QModelIndex& index);
+    void WusdMarketSelectionChanged(const QModelIndex& index);
+    void WeurMarketSelectionChanged(const QModelIndex& index);
 
 private:
+    void setCurrentTradePair(const QString& currencyToken1, const QString& currencyToken2);
     void initDocks();
     void createActions();
     void createMenu();

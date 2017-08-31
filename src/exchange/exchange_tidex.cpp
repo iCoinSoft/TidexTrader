@@ -26,7 +26,7 @@ Exchange_BTCe::Exchange_BTCe(QByteArray pRestSign, QByteArray pRestKey)
 
     moveToThread(this);
 
-	currencyMapFile="BTCe";
+    currencyMapFile="Tidex";
 	defaultCurrencyParams.currADecimals=8;
 	defaultCurrencyParams.currBDecimals=8;
 	defaultCurrencyParams.currABalanceDecimals=8;

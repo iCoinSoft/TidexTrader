@@ -135,9 +135,9 @@ void Exchange::setupApi(QtBitcoinTrader *mainClass, bool tickOnly)//Execute only
 	{
 		CurrencyPairItem currentPair=defaultCurrencyParams;
 		currentPair.name=settingsParams.value(symbolList.at(n)+"/Symbol","").toByteArray();
-		if(currentPair.name.length()!=6)continue;
+        //if(currentPair.name.length()!=6)continue;
 		currentPair.setSymbol(currentPair.name.toLatin1());
-		currentPair.name.insert(3,"/");
+        //currentPair.name.insert(3,"/");
 		currentPair.currRequestSecond=settingsParams.value(symbolList.at(n)+"/RequestSecond","").toByteArray();
 		if(!currentPair.currRequestSecond.isEmpty())
 			currentPair.name.append(" ["+currentPair.currRequestSecond+"]");

@@ -1,5 +1,5 @@
 
-
+#include "QVariant"
 #include "julyspinboxpicker.h"
 #include <QTableWidget>
 #include <QTimeLine>
@@ -442,7 +442,10 @@ QtBitcoinTrader::QtBitcoinTrader() :
 	copyTableValuesMenu.addSeparator();
 	copyTableValuesMenu.addAction("Cancel Order",this,SLOT(on_ordersCancelSelected_clicked()));
 	copyTableValuesMenu.addAction("Cancel All Orders",this,SLOT(on_ordersCancelAllButton_clicked()));
-
+    QObject::connect(ui.btc_market_table, SIGNAL(clicked(const QModelIndex&)), SLOT(BtcMarketSelectionChanged(const QModelIndex&)));
+    QObject::connect(ui.waves_market_table, SIGNAL(clicked(const QModelIndex&)), SLOT(WavesMarketSelectionChanged(const QModelIndex&)));
+    QObject::connect(ui.wusd_market_table, SIGNAL(clicked(const QModelIndex&)), SLOT(WusdMarketSelectionChanged(const QModelIndex&)));
+    QObject::connect(ui.weur_market_table, SIGNAL(clicked(const QModelIndex&)), SLOT(WeurMarketSelectionChanged(const QModelIndex&)));
     createActions();
     createMenu();
 
@@ -468,7 +471,7 @@ QtBitcoinTrader::QtBitcoinTrader() :
     ui.chartsLayout->addWidget(chartsView);
 
     newsView=new NewsView();
-    ui.newsLayout->addWidget(newsView);
+    //ui.newsLayout->addWidget(newsView);
 
     //ChatWindow *chatWindow=new ChatWindow();
     //ui.chatLayout->addWidget(chatWindow);
@@ -485,6 +488,44 @@ QtBitcoinTrader::QtBitcoinTrader() :
 
     if(iniSettings->value("UI/OptimizeInterface",false).toBool())recursiveUpdateLayouts(this);
 }
+
+void QtBitcoinTrader::BtcMarketSelectionChanged(const QModelIndex &index)
+{
+    const QString currencyToken = ui.btc_market_table->item(index.row(), 0)->data(0).toString();
+    setCurrentTradePair(currencyToken, "btc");
+    ui.waves_market_table->clearSelection();
+    ui.wusd_market_table->clearSelection();
+    ui.weur_market_table->clearSelection();
+}
+
+void QtBitcoinTrader::WavesMarketSelectionChanged(const QModelIndex &index)
+{
+    const QString currencyToken = ui.waves_market_table->item(index.row(), 0)->data(0).toString();
+    setCurrentTradePair(currencyToken, "waves");
+    ui.btc_market_table->clearSelection();
+    ui.wusd_market_table->clearSelection();
+    ui.weur_market_table->clearSelection();
+}
+
+void QtBitcoinTrader::WusdMarketSelectionChanged(const QModelIndex &index)
+{
+    const QString currencyToken = ui.wusd_market_table->item(index.row(), 0)->data(0).toString();
+    setCurrentTradePair(currencyToken, "wusd");
+    ui.btc_market_table->clearSelection();
+    ui.waves_market_table->clearSelection();
+    ui.weur_market_table->clearSelection();
+}
+
+void QtBitcoinTrader::WeurMarketSelectionChanged(const QModelIndex &index)
+{
+    const QString currencyToken = ui.weur_market_table->item(index.row(), 0)->data(0).toString();
+    setCurrentTradePair(currencyToken, "weur");
+    ui.btc_market_table->clearSelection();
+    ui.waves_market_table->clearSelection();
+    ui.wusd_market_table->clearSelection();
+}
+
+
 
 QtBitcoinTrader::~QtBitcoinTrader()
 {
@@ -1293,6 +1334,28 @@ void QtBitcoinTrader::chartsVisibilityChanged(bool visible)
     }
 }
 
+
+
+void QtBitcoinTrader::setCurrentTradePair(const QString &currencyToken1, const QString &currencyToken2)
+{
+    int itemIndex = -1;
+    QString currencyPairName = currencyToken1.toLower() + "_" + currencyToken2;
+    for(int index = 0; index < ui.currencyComboBox->count(); index++)
+    {
+        if(ui.currencyComboBox->itemText(index).compare(currencyPairName, Qt::CaseInsensitive) == 0)
+        {
+            itemIndex = index;
+        }
+    }
+    if(itemIndex >= 0)
+    {
+        ui.currencyComboBox->setCurrentIndex(itemIndex);
+        emit ui.currencyComboBox->currentIndexChanged(ui.currencyComboBox->currentIndex());
+    }
+}
+
+
+
 void QtBitcoinTrader::trafficTotalToZero_clicked()
 {
 	baseValues.trafficTotal=0;
@@ -1554,7 +1617,7 @@ void QtBitcoinTrader::on_currencyComboBox_currentIndexChanged(int val)
 	if(!constructorFinished||val<0||currPairsList.count()!=ui.currencyComboBox->count())return;
 	
 	bool fastChange=ui.currencyComboBox->itemText(val).left(5)==ui.currencyComboBox->itemText(lastLoadedCurrency).left(5);
-    if(val==lastLoadedCurrency)return;
+    //if(val==lastLoadedCurrency)return;
 	lastLoadedCurrency=val;
 
 	CurrencyPairItem nextCurrencyPair=currPairsList.at(val);
@@ -2784,7 +2847,7 @@ void QtBitcoinTrader::languageChanged()
     translateTab(ui.tabLastTrades);
     translateTab(ui.tabDepth);
     translateTab(ui.tabCharts);
-    translateTab(ui.tabNews);
+    //translateTab(ui.tabNews);
     //translateTab(ui.tabChat);
 
     ui.widgetAccount->parentWidget()->setWindowTitle(julyTr("ACCOUNT_GROUPBOX","%1 Account").arg(baseValues.exchangeName));
@@ -3263,6 +3326,7 @@ void QtBitcoinTrader::moveWidgetsToDocks()
     addDockWidget(area, createDock(ui.widgetTotalAtLast, "Total at Last Price"));
     addDockWidget(area, createDock(ui.widgetTotalAtBuySell, "Total at Buy/Sell Price"));
 
+
     QWidget* titleNULL = new QWidget();
     QDockWidget* dockNULL = new QDockWidget();
     dockNULL->setObjectName("dockNULL");
@@ -3299,6 +3363,12 @@ void QtBitcoinTrader::moveWidgetsToDocks()
     // Left
     QDockWidget* dockGroupOrders = createDock(ui.groupOrders, "Your Open Orders");
     addDockWidget(Qt::LeftDockWidgetArea, dockGroupOrders);
+    addDockWidget(Qt::LeftDockWidgetArea, createDock(ui.markets_tab, "Markets"));
+
+    //horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+    //QDockWidget* dockMarkets = createDock(ui.markets_tab, "Markets");
+    //addDockWidget(Qt::LeftDockWidgetArea, dockMarkets);
+
 
     // lock Logo
     lockLogo(false);
@@ -3309,7 +3379,7 @@ void QtBitcoinTrader::moveWidgetsToDocks()
     QDockWidget* dockDepth = createDock(ui.tabDepth, "Order Book");
     QDockWidget* dockLastTrades = createDock(ui.tabLastTrades, "Trades");
     QDockWidget* dockCharts = createDock(ui.tabCharts, "Charts");
-    QDockWidget* dockNews = createDock(ui.tabNews, "News");
+    //QDockWidget* dockNews = createDock(ui.tabNews, "News");
     //QDockWidget* dockChat = createDock(ui.tabChat, "Chat");
     dockCharts->setMinimumSize(400,200);
     splitDockWidget(dockGroupOrders, dockOrdersLog, Qt::Horizontal);
@@ -3317,7 +3387,7 @@ void QtBitcoinTrader::moveWidgetsToDocks()
     tabifyDockWidget(dockOrdersLog, dockDepth);
     tabifyDockWidget(dockOrdersLog, dockLastTrades);
     tabifyDockWidget(dockOrdersLog, dockCharts);
-    tabifyDockWidget(dockOrdersLog, dockNews);
+    //tabifyDockWidget(dockOrdersLog, dockNews);
     //tabifyDockWidget(dockOrdersLog, dockChat);
     delete ui.tabWidget;
 
@@ -3328,7 +3398,7 @@ void QtBitcoinTrader::moveWidgetsToDocks()
 
     connect(dockDepth, SIGNAL(visibilityChanged(bool)), this, SLOT(depthVisibilityChanged(bool)));
     connect(dockCharts, SIGNAL(visibilityChanged(bool)), this, SLOT(chartsVisibilityChanged(bool)));
-    connect(dockNews, SIGNAL(visibilityChanged(bool)), newsView, SLOT(visibilityChanged(bool)));
+    //connect(dockNews, SIGNAL(visibilityChanged(bool)), newsView, SLOT(visibilityChanged(bool)));
 }
 
 void QtBitcoinTrader::onActionAbout()

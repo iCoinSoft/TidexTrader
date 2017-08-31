@@ -25,6 +25,12 @@ QDockWidget* DockHost::createDock(QWidget* parent, QWidget* widget, const QStrin
     QDockWidget* dock = new QDockWidget(parent);
     dock->setObjectName(QString("dock%1").arg(++counter));
 
+    if(widget->layout() == nullptr)
+    {
+        QVBoxLayout* l = new QVBoxLayout();
+        widget->setLayout(new QVBoxLayout());
+        //l->setContentsMargins(5, 5, 5, 5);
+    }
     QMargins widgetMargins = widget->layout()->contentsMargins();
     widgetMargins.setTop(widgetMargins.top() + 2);
     widget->layout()->setContentsMargins(widgetMargins);

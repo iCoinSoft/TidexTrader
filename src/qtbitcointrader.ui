@@ -77,7 +77,7 @@
          <property name="verticalSpacing">
           <number>4</number>
          </property>
-         <item row="0" column="0">
+         <item row="0" column="1">
           <widget class="QWidget" name="loginVolumeBack" native="true">
            <layout class="QGridLayout" name="gridLayout">
             <property name="leftMargin">
@@ -246,7 +246,7 @@
            </layout>
           </widget>
          </item>
-         <item row="0" column="1">
+         <item row="0" column="2">
           <layout class="QGridLayout" name="feeLayout">
            <property name="sizeConstraint">
             <enum>QLayout::SetMaximumSize</enum>
@@ -285,10 +285,32 @@
               <string>TR00005</string>
              </property>
              <property name="text">
-              <string>Curency:</string>
+              <string notr="true">Curency:</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="4">
+            <widget class="QComboBox" name="currencyComboBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maxVisibleItems">
+              <number>36</number>
+             </property>
+             <property name="frame">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -350,25 +372,6 @@
               </widget>
              </item>
             </layout>
-           </item>
-           <item row="1" column="1" colspan="4">
-            <widget class="QComboBox" name="currencyComboBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maxVisibleItems">
-              <number>36</number>
-             </property>
-            </widget>
            </item>
            <item row="0" column="4">
             <widget class="QPushButton" name="calcButton">
@@ -1656,6 +1659,25 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_30">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="accessibleName">
+            <string>NETWORK_SPEED</string>
+           </property>
+           <property name="text">
+            <string>Speed:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="1">
           <widget class="QDoubleSpinBox" name="lastUpdate">
            <property name="sizePolicy">
@@ -1705,25 +1727,6 @@
            </property>
            <property name="value">
             <double>9999.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_30">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="accessibleName">
-            <string>NETWORK_SPEED</string>
-           </property>
-           <property name="text">
-            <string>Speed:</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -1806,6 +1809,4477 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="centerLayout">
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QTabWidget" name="markets_tab">
+        <property name="maximumSize">
+         <size>
+          <width>270</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="usesScrollButtons">
+         <bool>false</bool>
+        </property>
+        <property name="documentMode">
+         <bool>false</bool>
+        </property>
+        <property name="movable">
+         <bool>false</bool>
+        </property>
+        <widget class="QWidget" name="market_bct_tab">
+         <attribute name="title">
+          <string>BTC</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="btc_market_table">
+            <property name="editTriggers">
+             <set>QAbstractItemView::CurrentChanged</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="horizontalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="gridStyle">
+             <enum>Qt::SolidLine</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <property name="cornerButtonEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderVisible">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>ANT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EFYT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>B@</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BTS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>DASH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>DOGE</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EDG</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EOS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ETH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>GNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ICN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>INCNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>InPay</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>LTC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MCO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MER</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MRT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MSP</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>PBT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>QRL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RBX</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RLC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>SNM</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>SNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STA</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STEEM</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STORJ</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>SUR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>TAAS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>TIME</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>TKS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>VSL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WAVES</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WCT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>wETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WGR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>wSUR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Токен</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Имя</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>ANT</string>
+             </property>
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>Aragon</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>EFYT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>Ergo</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="0">
+             <property name="text">
+              <string>B@</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="1">
+             <property name="text">
+              <string>B@ankcoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="0">
+             <property name="text">
+              <string>BNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="1">
+             <property name="text">
+              <string>Bancor</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="0">
+             <property name="text">
+              <string>BTS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="1">
+             <property name="text">
+              <string>Bitshares</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="0">
+             <property name="text">
+              <string>DASH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="1">
+             <property name="text">
+              <string>Dash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="0">
+             <property name="text">
+              <string>DOGE</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="1">
+             <property name="text">
+              <string>Dogecoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="0">
+             <property name="text">
+              <string>EDG</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="1">
+             <property name="text">
+              <string>Edgeless</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="0">
+             <property name="text">
+              <string>eETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="1">
+             <property name="text">
+              <string>EncryptoTel(ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="0">
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="1">
+             <property name="text">
+              <string>MobileGo(ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="0">
+             <property name="text">
+              <string>EOS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="1">
+             <property name="text">
+              <string>EOS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="0">
+             <property name="text">
+              <string>ETH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="1">
+             <property name="text">
+              <string>Ethereum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="0">
+             <property name="text">
+              <string>GNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="1">
+             <property name="text">
+              <string>Golem</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="0">
+             <property name="text">
+              <string>ICN</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="1">
+             <property name="text">
+              <string>Iconomi</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="0">
+             <property name="text">
+              <string>INCNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="1">
+             <property name="text">
+              <string>Incent</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="0">
+             <property name="text">
+              <string>InPay</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="1">
+             <property name="text">
+              <string>InPay</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="0">
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="1">
+             <property name="text">
+              <string>Kolion</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="0">
+             <property name="text">
+              <string>LTC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="1">
+             <property name="text">
+              <string>Litecoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="0">
+             <property name="text">
+              <string>MCO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="1">
+             <property name="text">
+              <string>Monaco</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="0">
+             <property name="text">
+              <string>MER</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="1">
+             <property name="text">
+              <string>Mercury</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="0">
+             <property name="text">
+              <string>MGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="1">
+             <property name="text">
+              <string>MobileGo</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="0">
+             <property name="text">
+              <string>MRT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="1">
+             <property name="text">
+              <string>MinersReward</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="0">
+             <property name="text">
+              <string>MSP</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="1">
+             <property name="text">
+              <string>Mothership</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="0">
+             <property name="text">
+              <string>PBT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="1">
+             <property name="text">
+              <string>Primalbase</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="0">
+             <property name="text">
+              <string>QRL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="1">
+             <property name="text">
+              <string>Quantum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="0">
+             <property name="text">
+              <string>RBX</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="1">
+             <property name="text">
+              <string>Ripto Bux</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="0">
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="1">
+             <property name="text">
+              <string>Riddle</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="0">
+             <property name="text">
+              <string>RLC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="1">
+             <property name="text">
+              <string>iExec</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="0">
+             <property name="text">
+              <string>SNM</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="1">
+             <property name="text">
+              <string>SONM Token</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="0">
+             <property name="text">
+              <string>SNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="1">
+             <property name="text">
+              <string>Status</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="30" column="0">
+             <property name="text">
+              <string>STA</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="30" column="1">
+             <property name="text">
+              <string>Starta</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="31" column="0">
+             <property name="text">
+              <string>STEEM</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="31" column="1">
+             <property name="text">
+              <string>Steem</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="32" column="0">
+             <property name="text">
+              <string>STORJ</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="32" column="1">
+             <property name="text">
+              <string>StorjToken</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="33" column="0">
+             <property name="text">
+              <string>SUR</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="33" column="1">
+             <property name="text">
+              <string>Suretly (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="34" column="0">
+             <property name="text">
+              <string>TAAS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="34" column="1">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="35" column="0">
+             <property name="text">
+              <string>TIME</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="35" column="1">
+             <property name="text">
+              <string>ChronoBank</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="36" column="0">
+             <property name="text">
+              <string>TKS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="36" column="1">
+             <property name="text">
+              <string>Tokes</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="37" column="0">
+             <property name="text">
+              <string>VSL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="37" column="1">
+             <property name="text">
+              <string>vSlice</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="38" column="0">
+             <property name="text">
+              <string>WAVES</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="38" column="1">
+             <property name="text">
+              <string>Waves</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="39" column="0">
+             <property name="text">
+              <string>WCT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="39" column="1">
+             <property name="text">
+              <string>WavesCommunity</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="40" column="0">
+             <property name="text">
+              <string>wETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="40" column="1">
+             <property name="text">
+              <string>EncryptoTel (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="41" column="0">
+             <property name="text">
+              <string>WGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="41" column="1">
+             <property name="text">
+              <string>WavesGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="42" column="0">
+             <property name="text">
+              <string>WGR</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="42" column="1">
+             <property name="text">
+              <string>Wagerr</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="43" column="0">
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="43" column="1">
+             <property name="text">
+              <string>Wings</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="44" column="0">
+             <property name="text">
+              <string>wSUR</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="44" column="1">
+             <property name="text">
+              <string>Suretly (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="45" column="0">
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="45" column="1">
+             <property name="text">
+              <string>ZrCoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="market_waves_tab">
+         <attribute name="title">
+          <string>WAVES</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="waves_market_table">
+            <property name="editTriggers">
+             <set>QAbstractItemView::CurrentChanged</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="horizontalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>100</number>
+            </attribute>
+            <attribute name="horizontalHeaderMinimumSectionSize">
+             <number>39</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderDefaultSectionSize">
+             <number>30</number>
+            </attribute>
+            <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>ANT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>B@</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BCH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BTS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>DASH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>DOGE</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EDG</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EOS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ETH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>GNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ICN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>INCNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>InPay</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>LTC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MCO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MER</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MRT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MSP</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MTL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>PBT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>QRL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RBX</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RLC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>SNM</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>SNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STA</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STEEM</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STORJ</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>SUR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Taas</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>TIME</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Tokes</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>VSL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WCT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>wETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WGR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>wSUR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Токен</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Имя</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>ANT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>Aragon</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>B@</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>B@nkcoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="0">
+             <property name="text">
+              <string>BCH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="1">
+             <property name="text">
+              <string>Bitcoin Cash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="0">
+             <property name="text">
+              <string>BNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="1">
+             <property name="text">
+              <string>Bancor</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="0">
+             <property name="text">
+              <string>BTS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="1">
+             <property name="text">
+              <string>Bitshares</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="0">
+             <property name="text">
+              <string>DASH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="1">
+             <property name="text">
+              <string>Dash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="0">
+             <property name="text">
+              <string>DOGE</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="1">
+             <property name="text">
+              <string>Dogecoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="0">
+             <property name="text">
+              <string>EDG</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="1">
+             <property name="text">
+              <string>Edgeless</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="0">
+             <property name="text">
+              <string>eETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="1">
+             <property name="text">
+              <string>Encrypto Tel (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="0">
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="1">
+             <property name="text">
+              <string>MobileGo (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="0">
+             <property name="text">
+              <string>EOS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="1">
+             <property name="text">
+              <string>EOS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="0">
+             <property name="text">
+              <string>ETH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="1">
+             <property name="text">
+              <string>Ethereum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="0">
+             <property name="text">
+              <string>GNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="1">
+             <property name="text">
+              <string>Golem</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="0">
+             <property name="text">
+              <string>ICN</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="1">
+             <property name="text">
+              <string>Iconomi</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="0">
+             <property name="text">
+              <string>INCNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="1">
+             <property name="text">
+              <string>Incent</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="0">
+             <property name="text">
+              <string>InPay</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="1">
+             <property name="text">
+              <string>InPay</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="0">
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="1">
+             <property name="text">
+              <string>Kolion</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="0">
+             <property name="text">
+              <string>LTC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="1">
+             <property name="text">
+              <string>Litecoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="0">
+             <property name="text">
+              <string>MCO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="1">
+             <property name="text">
+              <string>Monaco</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="0">
+             <property name="text">
+              <string>MER</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="1">
+             <property name="text">
+              <string>Mercury</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="0">
+             <property name="text">
+              <string>MGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="1">
+             <property name="text">
+              <string>MobileGo</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="0">
+             <property name="text">
+              <string>MRT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="1">
+             <property name="text">
+              <string>MinersReward</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="0">
+             <property name="text">
+              <string>MSP</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="1">
+             <property name="text">
+              <string>Mothership</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="0">
+             <property name="text">
+              <string>MTL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="1">
+             <property name="text">
+              <string>Metal</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="0">
+             <property name="text">
+              <string>PBT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="1">
+             <property name="text">
+              <string>Primalbase</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="0">
+             <property name="text">
+              <string>QRL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="1">
+             <property name="text">
+              <string>Quantum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="0">
+             <property name="text">
+              <string>RBX</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="1">
+             <property name="text">
+              <string>Ripto Bux</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="0">
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="1">
+             <property name="text">
+              <string>Riddle</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="0">
+             <property name="text">
+              <string>RLC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="1">
+             <property name="text">
+              <string>iExec</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="0">
+             <property name="text">
+              <string>SNM</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="1">
+             <property name="text">
+              <string>SONM Token</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="30" column="0">
+             <property name="text">
+              <string>SNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="30" column="1">
+             <property name="text">
+              <string>Status</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="31" column="0">
+             <property name="text">
+              <string>STA</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="31" column="1">
+             <property name="text">
+              <string>Starta</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="32" column="0">
+             <property name="text">
+              <string>STEEM</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="32" column="1">
+             <property name="text">
+              <string>Steem</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="33" column="0">
+             <property name="text">
+              <string>STORJ</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="33" column="1">
+             <property name="text">
+              <string>StorjToken</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="34" column="0">
+             <property name="text">
+              <string>SUR</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="34" column="1">
+             <property name="text">
+              <string>Suretly (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="35" column="0">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="35" column="1">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="36" column="0">
+             <property name="text">
+              <string>TIME</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="36" column="1">
+             <property name="text">
+              <string>ChronoBank</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="37" column="0">
+             <property name="text">
+              <string>Tokes</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="37" column="1">
+             <property name="text">
+              <string>Tokes</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="38" column="0">
+             <property name="text">
+              <string>VSL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="38" column="1">
+             <property name="text">
+              <string>vSlice</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="39" column="0">
+             <property name="text">
+              <string>WCT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="39" column="1">
+             <property name="text">
+              <string>WavesCommunity</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="40" column="0">
+             <property name="text">
+              <string>wETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="40" column="1">
+             <property name="text">
+              <string>EncryptoTel (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="41" column="0">
+             <property name="text">
+              <string>WGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="41" column="1">
+             <property name="text">
+              <string>WavesGo</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="42" column="0">
+             <property name="text">
+              <string>WGR</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="42" column="1">
+             <property name="text">
+              <string>Wagerr</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="43" column="0">
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="43" column="1">
+             <property name="text">
+              <string>Wings</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="44" column="0">
+             <property name="text">
+              <string>wSUR</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="44" column="1">
+             <property name="text">
+              <string>Suretly (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="45" column="0">
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="45" column="1">
+             <property name="text">
+              <string>ZrCoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="market_wusd_tab">
+         <attribute name="title">
+          <string>WUSD</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="wusd_market_table">
+            <property name="editTriggers">
+             <set>QAbstractItemView::CurrentChanged</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="horizontalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>100</number>
+            </attribute>
+            <attribute name="horizontalHeaderMinimumSectionSize">
+             <number>39</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderDefaultSectionSize">
+             <number>30</number>
+            </attribute>
+            <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>ANT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BCH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BTC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>DASH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EDG</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EFYT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ETH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>GNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ICN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>LTC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MRT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MSP</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>PBT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>QRL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RLC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STA</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Taas</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>TIME</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>VSL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WAVES</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WCT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>wETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Токен</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Имя</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>ANT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>Aragon</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>BCH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>Bitcoin Cash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="0">
+             <property name="text">
+              <string>BNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="1">
+             <property name="text">
+              <string>Bancor</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="0">
+             <property name="text">
+              <string>BTC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="1">
+             <property name="text">
+              <string>Bitcoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="0">
+             <property name="text">
+              <string>DASH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="1">
+             <property name="text">
+              <string>Dash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="0">
+             <property name="text">
+              <string>EDG</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="1">
+             <property name="text">
+              <string>Edgeless</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="0">
+             <property name="text">
+              <string>eETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="1">
+             <property name="text">
+              <string>Encrypto Tel (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="0">
+             <property name="text">
+              <string>EFYT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="1">
+             <property name="text">
+              <string>Ergo</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="0">
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="1">
+             <property name="text">
+              <string>MobileGo (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="0">
+             <property name="text">
+              <string>ETH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="1">
+             <property name="text">
+              <string>Ethereum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="0">
+             <property name="text">
+              <string>GNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="1">
+             <property name="text">
+              <string>Golem</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="0">
+             <property name="text">
+              <string>ICN</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="1">
+             <property name="text">
+              <string>Iconomi</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="0">
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="1">
+             <property name="text">
+              <string>Kolion</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="0">
+             <property name="text">
+              <string>LTC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="1">
+             <property name="text">
+              <string>Litecoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="0">
+             <property name="text">
+              <string>MGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="1">
+             <property name="text">
+              <string>MobileGo (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="0">
+             <property name="text">
+              <string>MRT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="1">
+             <property name="text">
+              <string>MinersReward</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="0">
+             <property name="text">
+              <string>MSP</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="1">
+             <property name="text">
+              <string>Mothership</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="0">
+             <property name="text">
+              <string>PBT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="1">
+             <property name="text">
+              <string>Primalbase</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="0">
+             <property name="text">
+              <string>QRL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="1">
+             <property name="text">
+              <string>Quantum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="0">
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="1">
+             <property name="text">
+              <string>Riddle</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="0">
+             <property name="text">
+              <string>RLC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="1">
+             <property name="text">
+              <string>iExec</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="0">
+             <property name="text">
+              <string>STA</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="1">
+             <property name="text">
+              <string>Starta</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="0">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="1">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="0">
+             <property name="text">
+              <string>TIME</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="1">
+             <property name="text">
+              <string>ChronoBank</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="0">
+             <property name="text">
+              <string>VSL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="1">
+             <property name="text">
+              <string>vSlice</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="0">
+             <property name="text">
+              <string>Waves</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="1">
+             <property name="text">
+              <string>Waves</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="0">
+             <property name="text">
+              <string>WCT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="1">
+             <property name="text">
+              <string>WavesCommunity</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="0">
+             <property name="text">
+              <string>wETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="1">
+             <property name="text">
+              <string>EncryptoTel (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="0">
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="1">
+             <property name="text">
+              <string>Wings</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="0">
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="1">
+             <property name="text">
+              <string>ZrCoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="market_wuer_tab">
+         <attribute name="title">
+          <string>WEUR</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="weur_market_table">
+            <property name="editTriggers">
+             <set>QAbstractItemView::CurrentChanged</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="horizontalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>100</number>
+            </attribute>
+            <attribute name="horizontalHeaderMinimumSectionSize">
+             <number>39</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderDefaultSectionSize">
+             <number>30</number>
+            </attribute>
+            <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>ANT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BCH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>BTC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>DASH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EDG</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>EFYT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ETH</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>GNT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ICN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>LTC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MGO</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MRT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>MSP</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>PBT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>QRL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>RLC</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>STA</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Taas</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>TIME</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>VSL</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WAVES</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WCT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>wETT</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Токен</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Имя</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>ANT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>Aragon</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>BCH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="1" column="1">
+             <property name="text">
+              <string>Bitcoin Cash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="0">
+             <property name="text">
+              <string>BNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="2" column="1">
+             <property name="text">
+              <string>Bancor</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="0">
+             <property name="text">
+              <string>BTC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="3" column="1">
+             <property name="text">
+              <string>Bitcoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="0">
+             <property name="text">
+              <string>DASH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="4" column="1">
+             <property name="text">
+              <string>Dash</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="0">
+             <property name="text">
+              <string>EDG</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="5" column="1">
+             <property name="text">
+              <string>Edgeless</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="0">
+             <property name="text">
+              <string>eETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="6" column="1">
+             <property name="text">
+              <string>Encrypto Tel (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="0">
+             <property name="text">
+              <string>EFYT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="7" column="1">
+             <property name="text">
+              <string>Ergo</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="0">
+             <property name="text">
+              <string>eMGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="8" column="1">
+             <property name="text">
+              <string>MobileGo (ETH)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="0">
+             <property name="text">
+              <string>ETH</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="9" column="1">
+             <property name="text">
+              <string>Ethereum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="0">
+             <property name="text">
+              <string>GNT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="10" column="1">
+             <property name="text">
+              <string>Golem</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="0">
+             <property name="text">
+              <string>ICN</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="11" column="1">
+             <property name="text">
+              <string>Iconomi</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="0">
+             <property name="text">
+              <string>KOLION</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="12" column="1">
+             <property name="text">
+              <string>Kolion</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="0">
+             <property name="text">
+              <string>LTC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="13" column="1">
+             <property name="text">
+              <string>Litecoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="0">
+             <property name="text">
+              <string>MGO</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="14" column="1">
+             <property name="text">
+              <string>MobileGo (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="0">
+             <property name="text">
+              <string>MRT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="15" column="1">
+             <property name="text">
+              <string>MinersReward</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="0">
+             <property name="text">
+              <string>MSP</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="16" column="1">
+             <property name="text">
+              <string>Mothership</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="0">
+             <property name="text">
+              <string>PBT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="17" column="1">
+             <property name="text">
+              <string>Primalbase</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="0">
+             <property name="text">
+              <string>QRL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="18" column="1">
+             <property name="text">
+              <string>Quantum</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="0">
+             <property name="text">
+              <string>RIDDLE</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="19" column="1">
+             <property name="text">
+              <string>Riddle</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="0">
+             <property name="text">
+              <string>RLC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="20" column="1">
+             <property name="text">
+              <string>iExec</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="0">
+             <property name="text">
+              <string>STA</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="21" column="1">
+             <property name="text">
+              <string>Starta</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="0">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="22" column="1">
+             <property name="text">
+              <string>Taas</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="0">
+             <property name="text">
+              <string>TIME</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="23" column="1">
+             <property name="text">
+              <string>ChronoBank</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="0">
+             <property name="text">
+              <string>VSL</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="24" column="1">
+             <property name="text">
+              <string>vSlice</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="0">
+             <property name="text">
+              <string>Waves</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="25" column="1">
+             <property name="text">
+              <string>Waves</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="0">
+             <property name="text">
+              <string>WCT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="26" column="1">
+             <property name="text">
+              <string>WavesCommunity</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="0">
+             <property name="text">
+              <string>wETT</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="27" column="1">
+             <property name="text">
+              <string>EncryptoTel (Waves)</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="0">
+             <property name="text">
+              <string>WINGS</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="28" column="1">
+             <property name="text">
+              <string>Wings</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="0">
+             <property name="text">
+              <string>ZRC</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="29" column="1">
+             <property name="text">
+              <string>ZrCoin</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsEnabled</set>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
       <item>
        <widget class="QWidget" name="groupOrders" native="true">
         <property name="sizePolicy">
@@ -2417,7 +6891,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>0</number>
         </property>
         <property name="iconSize">
          <size>
@@ -3743,19 +8217,6 @@
              <number>0</number>
             </property>
            </layout>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="tabNews">
-         <property name="accessibleName">
-          <string>TAB_NEWS</string>
-         </property>
-         <attribute name="title">
-          <string>News</string>
-         </attribute>
-         <layout class="QGridLayout" name="gridLayout_17">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="newsLayout"/>
           </item>
          </layout>
         </widget>
@@ -6270,150 +10731,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>tabWidget</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>tabTradesIndexChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1233</x>
-     <y>269</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>242</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>depthAsksTable</sender>
-   <signal>doubleClicked(QModelIndex)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>depthSelectSellOrder(QModelIndex)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>931</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>402</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>depthBidsTable</sender>
-   <signal>doubleClicked(QModelIndex)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>depthSelectBuyOrder(QModelIndex)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1254</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>306</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tableTrades</sender>
-   <signal>doubleClicked(QModelIndex)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>tradesDoubleClicked(QModelIndex)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1250</x>
-     <y>377</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>411</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tableHistory</sender>
-   <signal>doubleClicked(QModelIndex)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>historyDoubleClicked(QModelIndex)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1110</x>
-     <y>301</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>246</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tableHistory</sender>
-   <signal>customContextMenuRequested(QPoint)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>tableCopyContextMenuRequested(QPoint)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>965</x>
-     <y>282</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>280</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>depthAsksTable</sender>
-   <signal>customContextMenuRequested(QPoint)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>tableCopyContextMenuRequested(QPoint)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>931</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>186</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>depthBidsTable</sender>
-   <signal>customContextMenuRequested(QPoint)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>tableCopyContextMenuRequested(QPoint)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1254</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>656</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tableTrades</sender>
-   <signal>customContextMenuRequested(QPoint)</signal>
-   <receiver>QtBitcoinTraderClass</receiver>
-   <slot>tableCopyContextMenuRequested(QPoint)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1250</x>
-     <y>377</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1085</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>ordersTable</sender>
    <signal>customContextMenuRequested(QPoint)</signal>
    <receiver>QtBitcoinTraderClass</receiver>
@@ -6570,6 +10887,150 @@
     <hint type="destinationlabel">
      <x>632</x>
      <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>tabTradesIndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1233</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>depthAsksTable</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>depthSelectSellOrder(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>931</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>depthBidsTable</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>tableCopyContextMenuRequested(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1254</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>656</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableTrades</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>tableCopyContextMenuRequested(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1250</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableHistory</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>historyDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1110</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableTrades</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>tradesDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1250</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>411</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>depthBidsTable</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>depthSelectBuyOrder(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1254</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>depthAsksTable</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>tableCopyContextMenuRequested(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>931</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableHistory</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>QtBitcoinTraderClass</receiver>
+   <slot>tableCopyContextMenuRequested(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>965</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1085</x>
+     <y>280</y>
     </hint>
    </hints>
   </connection>
