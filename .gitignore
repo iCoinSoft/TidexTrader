@@ -41,3 +41,4 @@ QtBitcoinTrader/
 Setup/Windows/obj/
 Setup/Windows/bin/
 deploy/
+Setup/Windows/key.txt

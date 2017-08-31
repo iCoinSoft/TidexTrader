@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<?define deployFolder = "..\..\deploy\1.0.1" ?>
+	<?define deployFolder = "..\..\deploy\1.0.2" ?>
     <Fragment>
         <DirectoryRef Id="INSTALLFOLDER">
             <Directory Id="dir593C11CEE1D8B59FD62BBEE6FA86A097" Name="bearer" />
