@@ -11,7 +11,7 @@ LIBS += -L"C:/OpenSSL-Win32/lib" -llibcrypto
 CONFIG -= app_bundle
 
 
-CONFIG	+= qt debug c++11
+CONFIG	+= qt  c++11
 
  win32 { TARGET = ../Bin/TidexTrader }
 !win32 { TARGET = TidexTrader }
